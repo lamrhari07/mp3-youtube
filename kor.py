@@ -22,10 +22,11 @@ class openSong:
     def v_title(self):
         try:
             webpage = urllib.request.urlopen(url_input).read()
-            title = str(webpage).split('<title>')[1].split('</title>')[0].decode("uft-8")
+            title = str(webpage).split('<title>')[1].split('</title>')[0]
 
         except:
-            title = 'Youtube Song'
+            webpage = urllib.request.urlopen(url_input).read()
+            title = str(webpage).split('<title>')[1].split('</title>')[0].decode("uft-8")
     
         return title
     
