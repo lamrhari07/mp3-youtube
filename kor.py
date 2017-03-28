@@ -55,11 +55,13 @@ class openSong:
             except:
                 print('Error downloading %s' % song)
                 return None
+    def Open_brow(self):  
+        webbrowser.open("%s" % url_input)
    
 def main():
     t = openSong(open_Url, down_url, data_url, url_input) #, kw_input, split_url )
     t.v_title()
     t.valid()
-
+    t.Open_brow()
 if __name__ == "__main__":
     main()
